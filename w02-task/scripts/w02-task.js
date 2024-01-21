@@ -4,7 +4,7 @@
 
 /* Step 2 - Variables */
 const fullName = "Trevor Hegstrom";
-const currentYear = 2023;
+const currentYear = 2024;
 const profilePicture = "images/me-image.jpg"
 
 /* Step 3 - Element Variables */
