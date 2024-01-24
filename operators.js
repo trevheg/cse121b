@@ -30,34 +30,37 @@ function encounter() {
     }
   }
 }
+
 function isHit() {
-  // should return true if a randomly generated number is greater than .5, false if it is less than .5
-  randNum = Math.random();
-  if (randNum > .5){
+  if (Math.random() > .5) {
+    return true;
+  } else {
+    return false;
+  }
+  // suggested solution is: 
+  // return Math.randiom() > 0.5;
+  // which is a better solution because I'm saying "if this is true, return true, if this is false, return false", while theirs sais "return if this is true or false." More succinct. They did this for shipCanFire() and isDestroyed() as well. 
+}
+
+function shipCanFire() {
+  if (shipHealth > 0 && shipAmmo > 0) {
     return true;
   } else {
     return false;
   }
 }
 
-function shipCanFire() {
-  // return true if the ships health is above 0 AND ammo is above 0 false otherwise
-  if (shipHealth > 0 && shipAmmo > 0){
-    return true;
-  } else {
-    return false;
-  }
-}
-function isDestroyed(health) {
-  // return true if health is zero or less
-  if (health <= 0){
-    return true;
-  } else {
-    return false;
-  }
-}
 function reloadShip() {
-  // reduce ship health by 1 and increase ammo by 3
   shipHealth--;
   shipAmmo += 3;
 }
+
+function isDestroyed(health) {
+  if (health <= 0) {
+    return true;
+  } else {
+    return false;
+  }
+
+}
+
