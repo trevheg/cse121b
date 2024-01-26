@@ -39,7 +39,7 @@ function isHit() {
   }
   // suggested solution is: 
   // return Math.randiom() > 0.5;
-  // which is a better solution because I'm saying "if this is true, return true, if this is false, return false", while theirs sais "return if this is true or false." More succinct. They did this for shipCanFire() and isDestroyed() as well. 
+  // which is a better solution because I'm saying "if this is true, return true, if this is false, return false", while theirs sais "return if this is true or false." More succinct. They did this for shipCanFire() and isDestroyed() as well.
 }
 
 function shipCanFire() {
