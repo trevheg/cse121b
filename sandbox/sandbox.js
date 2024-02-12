@@ -1,25 +1,58 @@
-function calculate(a, b, callback) {
-  callback(a + b);
-}
+fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+  .then(response => response.json()) // gets the json method and returns response object as a json format
+  .then(data => console.log(data)) // gets the data object
+  .catch(error => console.error(error))
 
-function displayResult(result) {
-  console.log('The result is: ' + result);
-}
+fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+  .then(response => response.json()) // uses the .json method in the api to return a JS object
+  .then(data => console.log(data.weight)) // gets the data object's weight value
+  .catch(error => console.error(error))
 
-calculate(2, 3, displayResult)
-let person = {
-  name: "Antonia Francesca",
-  age: 30,
-  profession: "Software Engineer",
-  hobbies: ["reading", "playing guitar", "hiking"],
-  address: {
-    street: "123 Camino Real",
-    city: "Santa Rosa",
-    country: "Honduras"
-  },
-  isEmployed: true,
-  greet: function() {
-    console.log(`Hello, my name is ${this.name}.`);
+fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+  .then(response => {
+    if (!response.ok) { // the .ok property returns true if the data was successfully fetched
+      throw new Error("Could not fetch resource");
+    }
+    return response.json();
+  })
+  .then(data => console.log(data))
+  .catch(error => console.error(error))
+
+// using async instead
+fetchData();
+async function fetchData() {
+  try {
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
+    if (!response.ok) {
+      throw new Error("Could not fetch resource");
+    }
+    const data = await response.json();
+    console.log(data);
   }
-};
+  catch (error) {
+    console.error(error);
+  }
+}
 
+fetchData();
+async function fetchData() {
+  try {
+    const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+
+    if (!response.ok) {
+      throw new Error("Could not fetch resource");
+    }
+
+    const data = await response.json();
+    console.log(data);
+
+    const pokemonSprite = data.sprites.front_default;
+    const imgElement = document.getElementById("pokemonSprite")
+    imgElement.src = pokemonSprite;
+    imgElement.style.display = "block";
+  }
+  catch (error) {
+    console.error(error);
+  }
+}
