@@ -272,7 +272,7 @@ footer {
 }
 
 
-#temples img {
+#temples img, #pokemon img {
     width: 250px;
     height: auto;
     box-shadow: 0 0 30px #777;

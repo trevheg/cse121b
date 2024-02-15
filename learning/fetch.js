@@ -1,6 +1,7 @@
 // fetch.js
 const url = "https://pokeapi.co/api/v2/pokemon/ditto";
 const urlList = "https://pokeapi.co/api/v2/pokemon";
+const bugList = "https://pokeapi.co/api/v2/type/7/";
 let results = null;
 async function getPokemon(url) {
     const response = await fetch(url);
@@ -29,11 +30,11 @@ function doStuffList(data) {
     //     const pokeHtml = `<li>${poke.name}</li>;`
     //     pokeListElement.innerHTML += pokeHtml;
     // }
-      pokeList.forEach((currentItem) => {
+    pokeList.forEach((currentItem) => {
         const html = `<li>${currentItem.name}</li>`;
         // note the += here...
         pokeListElement.innerHTML += html;
-      });
+    });
 }
 async function getPokemonList(url) {
     const response = await fetch(url);
@@ -44,4 +45,5 @@ async function getPokemonList(url) {
 }
 getPokemon(url);
 getPokemonList(urlList);
+// getPokemonList(bugList);
 console.log("second: ", results);
