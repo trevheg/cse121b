@@ -11,8 +11,6 @@ const displayTemples = (temples) => {
         const article = document.createElement("article");
         let h3 = document.createElement("h3");
         let img = document.createElement("img");
-        // h3 = `<h3>${temple.templeName}</h3>`;
-        // img = `<img src="${temple.imageURL}" alt="${temple.location}">`;
         h3.innerText = `${temple.templeName}`;
         img.src = `${temple.imageUrl}`;
         img.alt = `${temple.location}`;
