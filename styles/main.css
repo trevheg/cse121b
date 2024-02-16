@@ -266,19 +266,57 @@ footer {
     justify-content: center;
 }
 
-#temples h4 {
+#temples h3 {
     color: navy;
     font-size: smaller;
 }
 
 
-#temples img, #pokemon img {
+#temples img {
     width: 250px;
     height: auto;
     box-shadow: 0 0 30px #777;
     margin: .5rem;
 }
 
+#pokemon {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: .5rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+#pokemon article {
+    height: auto;
+    margin: .5rem;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 1rem;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#pokemon h3 {
+    color: navy;
+    font-size: smaller;
+}
+
+
+#pokemon img{
+    width: auto;
+    height: auto;
+    box-shadow: 0 0 30px #777;
+    margin: .5rem;
+}
+#pokemonlogo img{
+    display: block;
+    /* align-items: center; */
+    margin-left: auto;
+    margin-right: auto;
+}
 /* Media Queries */
 @media only screen and (min-width: 32.5em) {
     nav ul {
